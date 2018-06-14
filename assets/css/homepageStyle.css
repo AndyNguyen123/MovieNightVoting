@@ -1,0 +1,81 @@
+* {
+    box-sizing: border-box;
+    text-align: center;
+ }
+ #title {
+    background-color: #6200EE;
+    color: rgb(0, 0, 0)
+ }
+ body {background-color: black;}
+
+ #login {
+     display: flex;
+     justify-content: center;
+     
+     
+ }
+ /* Title JumboTron*/
+ .jumbotron{
+   
+    
+font-family: 'Bungee Inline';
+background: #6200ee;
+color:white;
+
+ }
+
+ /*Facebook button*/
+
+ 
+  .btn-fb{
+      background-color: #3B5998;
+      color: white;
+      margin-top: 20px;
+      margin-bottom: 20px;
+      
+  }
+
+ 
+ .fa-facebook{
+    background: #3B5998;
+    color: white;
+ }
+ 
+    
+    
+/*Gmail button*/
+
+ 
+ .btn-gplus{
+     background-color: red;
+     color: white;
+ }
+ .fa-google-plus {
+     color: white;
+ }
+ /*Sign up buttom*/
+
+ .btn-lg{
+     padding: 5px;
+ }
+
+ #loginB{
+
+    padding: 8px;
+    margin-top: 10px;
+    width: 110px;
+    
+    
+    
+    
+
+
+ }
+
+ 
+
+ 
+ 
+
+
+   

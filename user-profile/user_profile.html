@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+
+    <!-- FIREBASE CDN -->
+    <script src="https://www.gstatic.com/firebasejs/5.0.4/firebase.js"></script>
+
+    <!-- FIREBASE SOURCE SCRIPT  -->
+    <script src="../assets/javascript/google_auth/firebase-source.js"></script>
+
+    <!-- FACEBOOK SOURCE SCRIPT -->
+    <script src="../assets/javascript/facebook_auth/facebook_source.js"></script>
+
+    <!-- BOOTSTRAP -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+        crossorigin="anonymous">
+
+    <!-- RESET CSS -->
+    <link rel="stylesheet" href="./assets/css/reset.css">
+
+    <!-- STYLE CSS -->
+    <link rel="stylesheet" href="./assets/css/prof_style.css">
+
+    <!-- GOOGLE FONT -->
+    <link href="https://fonts.googleapis.com/css?family=Archivo+Black|Raleway" rel="stylesheet">
+
+</head>
+
+<body>
+
+    <!-- USE THIS ID FOR SIGNOUT BTN -->
+    <nav class="nav-container">
+        <button id="create-poll" type="button" class="btn btn-primary">CREATE POLL</button>
+        <button id="sign-out-btn" type="button" class="btn btn-danger">SIGN OUT</button>
+    </nav>
+
+    <div class="container">
+
+        <section class="name-container">
+            <div id="user-name-display"></div>
+        </section>
+
+        <main class="poll-container">
+            <div class="poll-info">
+                <h5>
+                    POLLS CREATED
+                </h5>
+                    <div id="host-data">
+                </div>
+            </div>
+            <div class="poll-info">
+                <h5>
+                    POLLS PARTICIPATED
+                </h5>
+                <div>
+                    <h4>
+                        <span>Title:</span> After work chill</h4>
+                    <h6>Creator: Andy</h6>
+                </div>
+            </div>
+        </main>
+
+    </div>
+
+    <!-- USER PROFILE JS -->
+    <script src="./assets/javascript/user_prof.js"></script>
+</body>
+
+</html>

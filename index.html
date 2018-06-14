@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang=“en”>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Vote Your Movie Night</title>
+
+    <!-- BOOTSTRAP -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4"
+        crossorigin="anonymous">
+
+    <!-- HOME STYLE CSS -->
+    <link rel="stylesheet" type="text/css" href="./assets/css/homepageStyle.css">
+
+    <!-- GOOGLE FONTS -->
+    <link href="https://fonts.googleapis.com/css?family=Bangers|Bungee+Inline" rel="stylesheet">
+
+    <!-- FONTAWESOME -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <!-- JQUERY -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+
+    <!-- FONTS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js" integrity="sha384-cs/chFZiN24E4KMATLdqdvsezGxaGsi4hLGOzlXwp5UZB1LY//20VyM2taTB4QvJ"
+        crossorigin="anonymous"></script>
+
+    <!-- BOOTSTRAP -->
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js" integrity="sha384-uefMccjFJAIv6A+rW+L4AHf99KvxDjWSu1z9VI8SKNVmz4sk7buKt/6v9KI65qnm"
+        crossorigin="anonymous"></script>
+
+    <!-- FIREBASE CDN -->
+    <script src="https://www.gstatic.com/firebasejs/5.0.4/firebase.js"></script>
+
+    <!-- FIREBASE SOURCE SCRIPT  -->
+    <script src="./assets/javascript/google_auth/firebase-source.js"></script>
+
+    <!-- FACEBOOK SOURCE SCRIPT -->
+    <script src="./assets/javascript/facebook_auth/facebook_source.js"></script>
+
+</head>
+
+<body>
+
+    <!-- Sign In Modal -->
+
+    <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">
+                        <h1>
+                            <strong>Log In</strong>
+                        </h1>
+                    </h5>
+                    <button type="button" class="close modal-close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+
+                    <form id="sign-in-form">
+                        <div class="form-group">
+                            <!-- error span -->
+                            <div class="d-none error-alert" style="color: red">Try again!</div>
+                            <!-- error span -->
+                            <label for="signIn-userEmail" class="col-form-label label-sign-in">Email</label>
+                            <input type="email" class="form-control" id="signIn-userEmail">
+                        </div>
+                        <div class="form-group">
+                            <!-- error span -->
+                            <div class="d-none error-alert" style="color: red">Try again!</div>
+                            <!-- error span -->
+                            <label for="signIn-password" class="col-form-label label-sign-in">Password</label>
+                            <input type="password" class="form-control" id="signIn-password">
+                        </div>
+                    </form>
+
+                </div>
+                <div class="modal-footer">
+                    <!-- added a class name, will be use for event -->
+                    <button type="button" class="btn btn-secondary modal-close" data-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-primary" id="login-btn">Log In</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <!--Title-->
+
+    <container class="col-md-">
+        
+        <div class="jumbotron">
+            <div class="container">
+                <h1 class="display-4">Vote Your Movie Night</h1>
+                <p class="lead"></p>
+            </div>
+        </div>
+
+        <!--Sign up Form -->
+
+        <div class="row">
+            <div class="col-md-12 col-md-offset-5" id="login">
+
+                <form id="sign-up-form">
+                
+                    <div class="form-group">
+                        <label for="user-name"></label>
+                        <input type="text" class="form-control" id="user-name" aria-describedby="emailHelp" placeholder="Enter Username">
+                        <small id="user-name" class="form-text text-muted"></small>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="user-email" style="color: red" class="d-none" id="error-email-msg">Incorrect Email address format</label>
+                        <input type="email" class="form-control" id="user-email" aria-describedby="emailHelp" placeholder="Enter Email">
+                        <small id="user-email" class="form-text text-muted">We'll never share your email with anyone else.</small>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="user-password"></label>
+                        <input type="password" class="form-control" id="user-password" placeholder="Password">
+                    </div>
+
+
+                    <!-- moved the button inside the form -->
+                    <!--Sign up button-->
+                    <button type="submit" class="btn btn-primary">Sign Up</button>
+                </div>
+                </form>
+                <!--Social and log in buttons start-->
+                <div class="col-md-12">
+              <div class="row">
+                  <div class="col-md-12 " >
+                <!--Facebook button-->
+                <button type="button" class="btn btn-fb" id="signin-facebook">
+                    <i class="fa fa-facebook pr-1"></i> Sign up using Facebook</button>
+                    </div>
+                    </div>
+                    
+                    
+                     
+                     <div class="col-md-12">       
+                <!--Google button-->
+                <button type="button" class="btn btn-gplus" id="signin-google">
+                    <i class="fa fa-google-plus pr-1"></i> Sign up using Gmail</button>
+                    </div>
+                    
+                
+                    <div class="col-md-12">
+                <!--Sing in button-->
+                
+                    <p class="form-text text-muted">Already have an account?</p>
+                    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal" data-whatever="@fat" id="loginB">Log In</button>
+                    </div> 
+                    </div>
+
+                    <!--Social and log in buttons end-->
+                
+
+
+            </div>
+        </div>
+
+    </container>
+
+    <!-- google auth -->
+    <script src="./assets/javascript/google_auth/google_oAuth.js"></script>
+    <!-- facebook auth -->
+    <script src="./assets/javascript/facebook_auth/facebook_oAuth.js"></script>
+    <!-- sign in -->
+    <script src="./assets/javascript/signIn_and_signUp/signin.js"></script>
+    <!-- sign up -->
+    <script src="./assets/javascript/signIn_and_signUp/signup.js"></script>
+
+</body>
+
+</html>

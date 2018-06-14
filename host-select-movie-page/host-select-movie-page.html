@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html class="no-js">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title></title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+        crossorigin="anonymous">
+</head>
+
+<body style="background-color:black">
+    <div class="row">
+    <!-- Date Form Input -->
+    <div class="col-md-3 mb-3 form-group row">
+        <label for="example-date-input" class="col-4 col-form-label" style="color:white">Show Date</label>
+        <span>
+            <input class="datepicker" data-date-format="mm/dd/yyyy" id="date-input">
+        </span>
+    </div>
+
+    <!-- Zip Code Form Input -->
+    <div class="col-md-3 mb-3 form-group row">
+      <label for="zip-input" class="col-2 col-form-label" style="color:white">Zip</label>
+      <span><input type="text" class="form-control" id="zip-input" placeholder="Zip" required></span>
+    </div>
+    </div>    
+
+    <!-- Movie Limit Selection -->
+    <div class="modal fade" id="limitSelection" tabindex="-1" role="dialog" aria-labelledby="limitSelection" aria-hidden="true">
+        <div class="modal-dialog modal-sm" role="document">
+            <div class="modal-content">
+                <div class="modal-body">
+                    You Can Only Select Up To 3 Movies
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Movie Info Modal -->
+    <div class="modal fade" id="movieInfoModal" tabindex="-1" role="dialog" aria-labelledby="movieInfoModal" aria-hidden="true">
+        <div class="modal-dialog modal-lg" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Modal title</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body" id="movieInfoModalBody">
+
+                </div>
+                <div class="modal-footer" id="movieInfoModalFooter">
+                    <!-- <button type="button" id="closeBtn" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    <button type="button" id="selectBtn" onclick="selectMovie()"class="btn btn-primary">Select</button> -->
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <button id="showMovieBtn" type="button" class="btn btn-primary">Show Movies</button>
+    <button id="createPollBtn" type="button" class="btn btn-primary">Create Poll</button>
+    <div id="movie-display" class="dflex flex-row justify-content-left">
+
+    </div>
+
+    <script src="https://www.gstatic.com/firebasejs/5.0.4/firebase.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.18.0/axios.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+        crossorigin="anonymous"></script>
+
+    <script src="./assets/javascript/host-select-movie-page.js"></script>
+    <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA95SKVltP7yweTYygcg_TvIBoP_bgNLDA&callback=initGoogleMap">
+
+    </script>
+</body>
+
+</html>
