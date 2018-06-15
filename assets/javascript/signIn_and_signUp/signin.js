@@ -61,7 +61,7 @@
                 // ! User is signed in.
                 // ! User data
                 console.log(user);
-                window.location.href = '../../../user-profile/user_profile.html';
+                window.location.href = './user-profile/user_profile.html';
                 // ...
             } else {
                 // User is signed out.

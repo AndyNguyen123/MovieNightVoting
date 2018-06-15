@@ -133,7 +133,7 @@
             displayName: userInfo.userName,
             // photoURL: "https://example.com/jane-q-user/profile.jpg"
         }).then(function () {
-            window.location.href = '../../../user-profile/user_profile.html';
+            window.location.href = './user-profile/user_profile.html';
             // Update successful.
         }).catch(function (error) {
             // An error happened.
