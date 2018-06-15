@@ -92,10 +92,15 @@
                         cacheElements.hostDataElem.innerHTML += `
                         <div class='d-flex justify-content-left mt-3' style='color: blue; cursor: pointer;'> 
                             <span>  
-                                ${snapshot.val()[poll].inputShowDate}_${snapshot.val()[poll].inputZip}:${snapshot.val()[poll].movies[0].title}, ${snapshot.val()[poll].movies[1].title}, ${snapshot.val()[poll].movies[2].title} 
+                                ${snapshot.val()[poll].inputShowDate}_
+                                ${snapshot.val()[poll].inputZip}:
+                                ${snapshot.val()[poll].movies[0].title}, 
+                                ${snapshot.val()[poll].movies[1].title}, 
+                                ${snapshot.val()[poll].movies[2].title}
                             </span>
                         </div>
                      `
+                     console.log(snapshot.val()[poll].movies[0].title, 'asdfasd');
                     }
                 }
             });

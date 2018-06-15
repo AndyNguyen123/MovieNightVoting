@@ -64,7 +64,7 @@ $('#showMovieBtn').on('click', function () {
     event.preventDefault();
     showDate = $('#date-input').val().trim();
     zipcode = $('#zip-input').val().trim();
-    tmsURL = 'http://data.tmsapi.com/v1.1/movies/showings?startDate=' + showDate + '&zip=' + zipcode + '&api_key=' + tmsAPIKey;
+    tmsURL = 'https://data.tmsapi.com/v1.1/movies/showings?startDate=' + showDate + '&zip=' + zipcode + '&api_key=' + tmsAPIKey;
     getMovieList();
 });
 
