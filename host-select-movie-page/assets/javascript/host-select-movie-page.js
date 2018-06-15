@@ -53,7 +53,7 @@ firebase.auth().onAuthStateChanged(function (user) {
             });
             console.log(selectedMovieArrays);
             createPoll(creatorID,zipcode,showDate,selectedMovieArrays,'');
-             window.location.href = './user-profile/user_profile.html';
+             window.location.href = '../user-profile/user_profile.html';
         })
     } else {
         // TODO: if user unsuccessful to login pop or error msg will come out 
