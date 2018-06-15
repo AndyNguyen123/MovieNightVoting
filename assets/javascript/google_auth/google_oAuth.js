@@ -73,7 +73,7 @@
                 // window.location.replace("http://google.com");
                 console.log(user);
                 // * can go back to the previous link
-                window.location.href = '../../../user-profile/user_profile.html';
+                window.location.href = './user-profile/user_profile.html';
             } else {
                 // TODO: if user unsuccessful to login pop or error msg will come out 
                 console.log('bye');
