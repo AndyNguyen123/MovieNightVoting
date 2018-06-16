@@ -34,8 +34,6 @@ firebase.auth().onAuthStateChanged(function (user) {
         $('#createPollBtn').on('click', function () {
             // console.log(currUser);
             var creatorID = currUser.providerData[0].uid;
-
-            console.log(selectedMovieTitles);
             selectedMovieTitles.forEach(function (element) {
                 var movie = {
                     imdbID: $(`.posters[data-title='${element}']`).attr('id'),
