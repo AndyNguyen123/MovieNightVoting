@@ -105,7 +105,7 @@
                         </a>
                      `
                         //  console.log(snapshot.val()[poll].movies[0].title, 'asdfasd');
-                    }
+                    } 
                 }
             });
 
