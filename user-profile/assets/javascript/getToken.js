@@ -11,9 +11,11 @@
 
         if(hasTokenParam) {
             return linkSearch.get('token'); 
+        } else {
+            return 'no token param'
         }
         
     }
-    getLink(currentLink);
-
-})
+    
+   console.log(getLink(currentLink));
+}());
