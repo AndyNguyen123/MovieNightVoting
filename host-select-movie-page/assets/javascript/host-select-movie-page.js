@@ -44,6 +44,7 @@ firebase.auth().onAuthStateChanged(function (user) {
                     plot: $(`.posters[data-title='${element}']`).attr('data-plot'),
                     year: $(`.posters[data-title='${element}']`).attr('data-year'),
                     runtime: $(`.posters[data-title='${element}']`).attr('data-runtime'),
+                    rating: $(`.posters[data-title='${element}']`).attr('data-rating'),
                     poster: $(`.posters[data-title='${element}']`).attr('data-poster'),
                     showTimes: movies[movies.map(x => x.title).indexOf(element)].showtimes,
                 }

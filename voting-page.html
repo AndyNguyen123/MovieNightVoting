@@ -12,9 +12,31 @@
 </head>
 
 <body style="background-color:black">
-    <div id="movie-display" class="dflex flex-row justify-content-left">
+
+    <div class="modal fade" id="movie-info-modal" tabindex="-1" role="dialog" aria-labelledby="movie-info-modal" aria-hidden="true">
+        <div class="modal-dialog modal-lg" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Modal title</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body" id="movie-info-modal-body">
+
+                </div>
+                <div class="modal-footer" id="movie-info-modal-footer">
+                    <!-- <button type="button" id="closeBtn" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                            <button type="button" id="selectBtn" onclick="selectMovie()"class="btn btn-primary">Select</button> -->
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="movie-display" class="d-flex flex-row justify-content-around">
 
     </div>
+
     <script src="https://www.gstatic.com/firebasejs/5.0.4/firebase.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.18.0/axios.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
