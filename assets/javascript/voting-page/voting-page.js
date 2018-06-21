@@ -40,43 +40,42 @@ ref.on('value', function (snapshot) {
     }
 });
 
-function displayMovies (movies) {
+var isPosterClicked = false;
+var movieVoted = '';
+function displayMovies(movies) {
     movies.forEach(movie => {
         var showTimes = [];
         movie.showTimes.forEach(showTime => {
             showTimes.push(showTime.theatre.name + ': ' + showTime.dateTime);
         })
         console.log(showTimes);
-        var posterDiv = $(
-            `<img class='posters m-3' src=${poster}>`);
-        posterDiv.on('click', launchModal(movie));
+        var posterDiv = $(`<img class='posters m-3' src='${movie.poster}'>`);
+        posterDiv.on('click', function () {
+            isPosterClicked = true;
+            $('#movie-info-modal').modal('show');
+            $('.modal-title').text(movie.title);
+            var movieInfoDiv = $(
+                `<div>
+                    <p><strong>Actors:</strong> ${movie.actors}</p>
+                    <p><strong>Director:</strong> ${movie.director}</p>
+                    <p><strong>Genre:</strong> ${movie.genre}</p>
+                    <p><strong>Year:</strong> ${movie.year}</p>
+                    <p><strong>Duration:</strong> ${movie.runtime}</p>
+                    <p><strong>Rating:</strong> ${movie.rating}</p>
+                    <p><strong>Plot:</strong> ${movie.plot}</p>
+                 </div>`)
+            $('#movie-info-modal-body').html(movieInfoDiv);
+            var closeButton = $(`<button type="button"  id="closeBtn" class="btn btn-secondary" data-dismiss="modal">Close</button>`)
+            var selectButton = $(`<button type="button" id="selectBtn" class="btn btn-primary">Select</button>`)
+            selectButton.on('click', function() {
+                movieVoted = movie.title;
+                $('#movie-info-modal').modal('hide');
+            });
+            console.log('Movie Voted: ' + movieVoted);
+            $('#movie-info-modal-footer').empty();
+            $('#movie-info-modal-footer').append(closeButton);
+            $('#movie-info-modal-footer').append(selectButton);
+        })
         $('#movie-display').append(posterDiv);
     });
-}
-
-isPosterClicked = false;
-
-function launchModal (movie) {
-    isPosterClicked = true;
-    $('#movie-info-modal').modal('show');
-    $('.modal-title').text(movie.title);
-    var movieInfoDiv = $(
-        `<div>
-            <p><strong>Actors:</strong> ${movie.actors}</p>
-            <p><strong>Director:</strong> ${movie.director}</p>
-            <p><strong>Genre:</strong> ${movie.genre}</p>
-            <p><strong>Year:</strong> ${movie.year}</p>
-            <p><strong>Duration:</strong> ${movie.runtime}</p>
-            <p><strong>Rating:</strong> ${movie}</p>
-            <p><strong>Plot:</strong> ${$(this).attr('data-plot')}</p>
-        </div>`)
-    $('#movieInfoModalBody').html(movieInfoDiv);
-    var closeButton = $(`<button type="button"  id="closeBtn" class="btn btn-secondary" data-dismiss="modal">Close</button>`)
-    var selectButton = $(`<button type="button" id="selectBtn" class="btn btn-primary" data-title="${$(this).attr('data-title')}" data-poster="${$(this).attr('data-poster')}">
-                                Select
-                            </button>`)
-    selectButton.on('click', selectMovie);
-    $('#movieInfoModalFooter').empty();
-    $('#movieInfoModalFooter').append(closeButton);
-    $('#movieInfoModalFooter').append(selectButton);
 }
