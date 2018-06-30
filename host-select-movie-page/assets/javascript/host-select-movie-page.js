@@ -1,5 +1,4 @@
 //API Keys
-var googleAPIKey = 'AIzaSyA95SKVltP7yweTYygcg_TvIBoP_bgNLDA';
 var tmsAPIKey = 'dgf69zqkhraznhf7zzdaee2r';
 var tmdbAPIKey = 'd4b8f64d1915c91386ea4a4bba96b122';
 var omdbAPIKey = 'ee6c2ea1';
@@ -179,23 +178,4 @@ function getMovieList() {
         }).catch(function (err) {
             console.error(err);
         });
-}
-
-
-function initGoogleMap() {
-    var service = new google.maps.DistanceMatrixService;
-    service.getDistanceMatrix({
-        origins: ['AMC Tustin 14 at The District'],
-        destinations: ['92660'],
-        travelMode: 'DRIVING',
-        unitSystem: google.maps.UnitSystem.IMPERIAL,
-        avoidHighways: false,
-        avoidTolls: false
-    }, function (response, status) {
-        if (status !== 'OK') {
-            alert('Error was: ' + status);
-        } else {
-            console.log(response);
-        }
-    });
 }
